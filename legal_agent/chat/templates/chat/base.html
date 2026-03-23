@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Legal Agent</title>
+    <link rel="stylesheet" href="{% static 'chat/style.css' %}">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <a href="{% url 'create_chat' %}" class="new-chat">
+            <span>+</span> New Chat
+        </a>
+        <div class="chat-history">
+            {% for chat in chats %}
+                <a href="{% url 'chat_detail' chat.id %}" 
+                   class="chat-item {% if active_chat and chat.id == active_chat.id %}active{% endif %}">
+                    {{ chat.title|default:"Legal Query" }}
+                </a>
+            {% endfor %}
+        </div>
+    </aside>
+
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+</div>
+</body>
+</html>
