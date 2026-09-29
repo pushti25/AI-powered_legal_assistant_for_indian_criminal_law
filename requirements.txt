@@ -1,0 +1,2 @@
+# Python dependency confirmed from the visible Ollama test
+requests

@@ -1,0 +1,12 @@
+{% extends "chat/base.html" %}
+
+{% block content %}
+<div class="messages" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div>
+        <h1>Legal AI Assistant</h1>
+        <p style="color: #aaa; margin-top: 10px;">Select a previous chat or start a new research session.</p>
+        <br>
+        <a href="{% url 'create_chat' %}" class="new-chat" style="display: inline-block;">+ Start New Conversation</a>
+    </div>
+</div>
+{% endblock %}
